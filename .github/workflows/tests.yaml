@@ -1,0 +1,33 @@
+name: Tests
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration:
+          - php: '5.6'
+            extensions: ''
+          - php: '7.4'
+            extensions: 'apc'
+    name: PHP ${{ matrix.configuration.php }} Tests
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.configuration.php }}
+        extensions: mbstring, intl, ${{ matrix.configuration.extensions }}
+        ini-values: post_max_size=256M, short_open_tag=On
+        coverage: xdebug
+        tools: composer
+    
+    - name: Install dependencies
+      run: composer install
+
+    - name: Unit tests
+      run: php vendor/bin/peridot tests/unit/

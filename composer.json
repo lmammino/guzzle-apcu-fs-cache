@@ -1,0 +1,31 @@
+{
+    "name": "lmammino/guzzle-apcu-fs-cache",
+    "description": "A zero config cache storage for guzzle-cache-middleware that tries to cache on Apcu and fallbacks to filesystem",
+    "keywords": [
+        "http",
+        "cache",
+        "filesystem",
+        "apcu",
+        "in-memory",
+        "in memory",
+        "guzzle",
+        "client",
+        "HTTP client"
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "kevinrob/guzzle-cache-middleware": "~3.3",
+        "symfony/cache": "~3.4"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.5",
+        "peridot-php/peridot": "^1.19"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LM\\": "src"
+        }
+    }
+}
