@@ -34,3 +34,5 @@ jobs:
 
     - name: Functional tests (launch darkly client)
       run: rm -rf cache && php tests/functional/launch_darkly.php
+      env:
+        LD_TOKEN: ${{ secrets.LD_TOKEN }}
