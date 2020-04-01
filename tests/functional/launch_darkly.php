@@ -32,23 +32,17 @@ function onMiss ($key) {
     $cacheMissCount++;
 }
 
-function onExpiry ($key) {
-    echo("\t\t > EXPIRY $key\n");
-    global $expiryCount;
-    $expiryCount++;
-}
-
 $ldSDKKey = getenv('LD_TOKEN');
 
 $cacheDir = 'cache/';
 $namespace = 'launch_darkly';
 $ttl = 5;
-$cacheStorage = new ApcuFsStorage($cacheDir, $namespace, $ttl, onHit, onMiss, onExpiry);
+$cacheStorage = new ApcuFsStorage($cacheDir, $namespace, $ttl, 'onHit', 'onMiss');
 $LDClient = new LaunchDarkly\LDClient($ldSDKKey, ["cache" => $cacheStorage]);
 $LDUser = new LaunchDarkly\LDUser("test@githubactions.com");
 
-echo "\n   uses ". ($hasApc ? "Apcu" : "Filesystem") . "...\n";
 $hasApc = extension_loaded('apc') && ini_get('apc.enabled');
+echo "\n   uses ". ($hasApc ? "Apcu" : "Filesystem") . "...\n";
 assert($cacheStorage->usingApcu == $hasApc, "Is using Apcu if available");
 assert($cacheStorage->usingFilesystem == !$hasApc, "Is using Filesystem if Apcu is not available");
 echo "✔️  OK\n";
