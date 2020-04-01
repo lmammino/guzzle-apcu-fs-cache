@@ -12,6 +12,8 @@ A zero config cache storage for guzzle-cache-middleware that tries to cache on A
 
 ## Install
 
+Requires PHP 5.5+.
+
 Using composer:
 
 ```bash
