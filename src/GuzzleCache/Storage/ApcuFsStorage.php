@@ -48,16 +48,21 @@ class ApcuFsStorage implements CacheStorageInterface {
      */
     public function fetch($key) {
         $entry = $this->cache->get($key);
-        if ($entry) {
-            if ($this->onHit) {
+        $isHit = $entry instanceof CacheEntry;
+
+        if ($isHit) {
+            if (is_callable($this->onHit)) {
                 call_user_func($this->onHit, $key);
             }
-        } else {
-            if ($this->onMiss) {
-                call_user_func($this->onMiss, $key);
-            }
+
+            return $entry;
         }
-        return $entry;
+    
+        if (is_callable($this->onMiss)) {
+            call_user_func($this->onMiss, $key);
+        }
+    
+        return;
     }
 
     /**
@@ -70,7 +75,10 @@ class ApcuFsStorage implements CacheStorageInterface {
         if ($this->cache->has($key)) {
             return false;
         }
-        return $this->cache->set($key, $data, $this->ttl);
+        
+        $this->cache->set($key, $data, $this->ttl);
+        
+        return true;
     }
 
     /**

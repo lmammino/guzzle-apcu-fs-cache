@@ -20,7 +20,8 @@
     },
     "require-dev": {
         "guzzlehttp/guzzle": "^6.5",
-        "peridot-php/peridot": "^1.19"
+        "peridot-php/peridot": "^1.19",
+        "launchdarkly/server-sdk": "^3.7"
     },
     "license": "MIT",
     "autoload": {

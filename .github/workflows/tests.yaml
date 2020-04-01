@@ -31,3 +31,6 @@ jobs:
 
     - name: Unit tests
       run: php vendor/bin/peridot tests/unit/
+
+    - name: Functional tests (launch darkly client)
+      run: rm -rf cache && php tests/functional/launch_darkly.php
