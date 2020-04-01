@@ -36,3 +36,6 @@ jobs:
       run: rm -rf cache && php tests/functional/launch_darkly.php
       env:
         LD_TOKEN: ${{ secrets.LD_TOKEN }}
+
+    - name: Functional tests (guzzle)
+      run: rm -rf cache && php tests/functional/guzzle.php

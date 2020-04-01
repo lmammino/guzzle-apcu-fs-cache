@@ -21,13 +21,13 @@ $cacheMissCount = 0;
 $expiryCount = 0;
 
 function onHit ($key) {
-    echo("\t\t > HIT $key\n");
+    echo "\t\t > HIT $key\n";
     global $cacheHitCount;
     $cacheHitCount++;
 }
 
 function onMiss ($key) {
-    echo("\t\t > MISS $key\n");
+    echo "\t\t > MISS $key\n";
     global $cacheMissCount;
     $cacheMissCount++;
 }

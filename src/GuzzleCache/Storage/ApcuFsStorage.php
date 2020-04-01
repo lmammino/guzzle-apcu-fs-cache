@@ -17,6 +17,18 @@ class ApcuFsStorage implements CacheStorageInterface {
     public $usingApcu = false;
     public $usingFilesystem = true;
 
+    /**
+     * Creates a new instance of ApcuFsStorage
+     * 
+     * @param string $dir The directory where the cache should be saved if using the filesystem
+     *   (Default: the temp directory).
+     * @param string $namespace A namespace for the cache storage, useful when using multiple
+     *   instances and cache should not be mixed between them. It will create a subfolder on the
+     *   filesystme and a prefix on APC. (Default: 'default').
+     * @param integer $ttl The duration of a cache entry in seconds (Default: 60).
+     * @param callable $onHit An optional function that gets called when there's a cache hit.
+     * @param callable $onMiss An optional function that gets called when there's a cache miss.
+     */
     public function __construct($dir = null, $namespace = 'default', $ttl = 60, $onHit = null, $onMiss = null) {
         $this->ttl = $ttl;
         $this->onHit = $onHit;
