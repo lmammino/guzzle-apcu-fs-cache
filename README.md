@@ -3,11 +3,11 @@
 A zero config cache storage for guzzle-cache-middleware that tries to cache on Apcu and fallbacks to filesystem.
 
 ![Tests](https://github.com/lmammino/guzzle-apcu-fs-cache/workflows/Tests/badge.svg)
-[![Latest Stable Version](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/v/stable)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
-[![Total Downloads](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/downloads)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
-[![Latest Unstable Version](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/v/unstable)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
-[![License](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/license)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
-[![composer.lock](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/composerlock)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
+[![Latest Stable Version](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/v/stable?)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
+[![Total Downloads](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/downloads?)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
+[![Latest Unstable Version](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/v/unstable?)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
+[![License](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/license?)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
+[![composer.lock](https://poser.pugx.org/lmammino/guzzle-apcu-fs-cache/composerlock?)](https://packagist.org/packages/lmammino/guzzle-apcu-fs-cache)
 
 
 ## Install
